@@ -1,0 +1,133 @@
+:root {
+    --primary-color: #00c292;
+    --primary-color-hover: #00a87e;
+    --secondary-color: #2c3e50;
+    --text-color: #ffffff;
+    --text-muted-color: #b0b0b0;
+    --background-color: #1a1a1a;
+    --box-shadow-light: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --box-shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: #121212;  /* Dark background for the full page */
+    color: #e0e0e0;  /* Light text for contrast */
+    font-family: Arial, sans-serif;  /* General font */
+    margin: 0;
+    padding: 0;
+}
+
+body.dark {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header, .navbar {
+    background-color: #333333;  /* Dark header background */
+    color: #ffffff;  /* Light text */
+}
+
+.navbar a {
+    color: #ffa500;  /* Accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #ffcc33;  /* Slightly lighter orange on hover for better contrast */
+}
+
+main {
+    padding: 20px;
+    background-color: #1e1e1e;  /* Darker background for content sections */
+}
+
+button, .btn {
+    background-color: #444444;  /* Dark buttons */
+    color: #ffffff;  /* Light text on buttons */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #555555;  /* Hover effect */
+}
+
+button:focus, .btn:focus {
+    outline: 3px solid #ffa500;  /* Focus effect for buttons */
+}
+
+footer {
+    background-color: #2c2c2c;  /* Dark footer */
+    color: #dcdcdc;  /* Lighter footer text for better contrast */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.product-item, .order-summary, .payment-info, .product-details {
+    background-color: #222222;  /* Dark background for product and order sections */
+    border: 1px solid #444444;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+input, textarea {
+    background-color: #333333;  /* Dark input fields */
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #999999;
+}
+
+input:focus, textarea:focus {
+    border-color: #ffa500;  /* Focus border color */
+    background-color: #444444;  /* Slightly lighter background when focused */
+}
+
+input[type="submit"]:focus, button[type="submit"]:focus {
+    outline: 3px solid #ffa500;  /* Focus effect for submit buttons */
+}
+
+/* Dark theme specific overrides */
+.hero {
+    background-color: #2c3e50;
+}
+
+.search-section {
+    background-color: #2c3e50;
+}
+
+.search-form input {
+    background-color: #1a1a1a;
+    color: var(--text-color);
+    border-color: #404040;
+}
+
+.feature-item {
+    background-color: #2c3e50;
+}
+
+.stat-item {
+    background-color: #2c3e50;
+}
+
+/* Additional accessibility adjustments */
+a:focus, button:focus {
+    outline: 3px solid #ffa500;  /* Focus outline for links and buttons */
+}

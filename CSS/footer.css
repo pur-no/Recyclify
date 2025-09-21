@@ -1,0 +1,89 @@
+/* Define CSS Variables for Colors */
+:root {
+    --dark-bg: #2c3e50;
+    --light-text: #ecf0f1;
+    --accent-color: #1abc9c;
+    --hover-scale: 1.2;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-content {
+    text-align: center;
+    flex: 1 1 100%; /* Full width on smaller screens */
+}
+
+.footer-content p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: var(--light-text);
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover, .footer-links li a:focus {
+    color: var(--accent-color);
+    outline: none;
+}
+
+/* Social Media Icons */
+.social-media {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(100%);
+}
+
+.social-media a:hover img, .social-media a:focus img {
+    transform: scale(var(--hover-scale)); /* Slight zoom effect */
+    filter: grayscale(0);
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social-media {
+        gap: 10px;
+    }
+}

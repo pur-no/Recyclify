@@ -1,0 +1,316 @@
+/* General Styles for Header */
+header {
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    z-index: 2;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Default light theme */
+body.light header {
+    background-color: #000000; /* Black background in light mode */
+    color: #ffffff;
+}
+
+body.light .navbar a {
+    color: white; /* White text in light mode */
+}
+
+body.light .btn-toggle {
+    color: white; /* White text for toggle button in light mode */
+}
+
+/* Dark theme */
+body.dark header {
+    background-color: #ffffff; /* White background in dark mode */
+    color: #000000;
+}
+
+body.dark .navbar a {
+    color: black; /* Black text in dark mode */
+}
+
+body.dark .btn-toggle {
+    color: black; /* Black text for toggle button in dark mode */
+}
+
+/* Enhanced Navigation Bar */
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 20px;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Underline animation for nav links */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar a:hover {
+    background-color: #34495e; /* Slightly darker blue-gray */
+    color: #ffffff;
+}
+
+.navbar a.active {
+    background-color: #16a085; /* Greenish tint */
+    color: #ffffff;
+}
+
+/* Cart Button Enhancement */
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px !important;
+}
+
+.cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Menu (Hamburger Style) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+.hamburger.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open div:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+
+.hamburger.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Navigation */
+.navbar-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(100%); /* Slide-in effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-mobile.open {
+    transform: translateX(0);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Dark theme styles for dropdown */
+body.dark .dropdown-menu {
+    background-color: #2c3e50;
+}
+
+body.dark .dropdown-menu a {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        display: none; /* Hide default navbar on small screens */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar-mobile {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        flex-direction: column;
+        background-color: var(--background-color);
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Accessibility Enhancements */
+.navbar a:focus, 
+.navbar-mobile a:focus {
+    outline: 2px solid #16a085; /* Match the active color */
+    outline-offset: 2px;
+}
+
+/* Consistent Button Styling */
+.btn-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
